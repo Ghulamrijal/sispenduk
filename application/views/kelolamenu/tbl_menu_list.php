@@ -1,63 +1,24 @@
 <div class="content-wrapper">
     <section class="content">
 
-
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="box box-warning box-solid">
-
-                    <div class="box-header">
-                        <h3 class="box-title">SETTING TAMPILAN MENU</h3>
-                    </div>
-
-                    <div class="box-body">
-                        <?php echo form_open('kelolamenu/simpan_setting')?>
-                        <table class="table table-bordered">
-                            <tr><td width="250">Tampilkan Menu Berdasarkan Level</td><td>
-                                    
-                                    <?php
-                                    echo form_dropdown('tampil_menu',array('ya'=>'YA','tidak'=>'TIDAK'),$setting['value'],array('class'=>'form-control'));
-                                    ?>
-                                </td></tr>
-                            <tr><td></td><td><button type="submit" class="btn btn-danger btn-sm">Simpan Perubahan</button></td></tr>
-                        </table>
-                    </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="box box-warning box-solid">
-
-                    <div class="box-header">
-                        <h3 class="box-title">KELOLA DATA MENU</h3>
-                    </div>
-
-                    <div class="box-body">
-                        <div style="padding-bottom: 10px;"'>
-                            <?php echo anchor(site_url('kelolamenu/create'), '<i class="fa fa-wpforms" aria-hidden="true"></i> Tambah Data', 'class="btn btn-danger btn-sm"'); ?>
-                            <?php //echo anchor(site_url('kelolamenu/excel'), '<i class="fa fa-file-excel-o" aria-hidden="true"></i> Export Ms Excel', 'class="btn btn-success btn-sm"'); ?>
-                            <?php //echo anchor(site_url('kelolamenu/word'), '<i class="fa fa-file-word-o" aria-hidden="true"></i> Export Ms Word', 'class="btn btn-primary btn-sm"'); ?></div>
-                        <table class="table table-bordered table-striped" id="mytable">
-                            <thead>
-                                <tr>
-                                    <th width="30px">No</th>
-                                    <th>Title</th>
-                                    <th>Url</th>
-                                    <th>Icon</th>
-                                    <th>Is Main Menu</th>
-                                    <th>Is Aktif</th>
-                                    <th width="100px">Action</th>
-                                </tr>
-                            </thead>
-
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="konten">
+			<h1 align="center" class="site-heading text-center text-white d-none d-lg-block">
+                <span class="site-heading-upper text-primary mb-3">Pemerintah Kota Batu</span>
+                <br>
+	   			<span class="site-heading-lower">DINAS KEPENDUDUKAN DAN CATATAN SIPIL</span>
+	  	 	</h1>
+			<br/>
+		</div>	
+        <div class="col-xl-9 col-lg-10 mx-auto">
+              <div class="bg-faded rounded p-5">
+                <h2 class="section-heading mb-4">
+                  <span class="section-heading-upper">MAKLUMAT</span>
+                </h2>
+                <h3> Dengan ini, Kami Menyatakan
+                    Sanggup Menyelenggarakan Pelayanan Sesuai Standar Pelayanan 
+                    Yang Telah ditetapkan, Demi Peningkatan Kualitas Pelayanan Kepada Masyarakat
+                    Dan Siap Menerima Sanksi Jika Melanggar Standar Pelayanan</h3>
+              </div>
     </section>
 </div>
 <script src="<?php echo base_url('assets/js/jquery-1.11.2.min.js') ?>"></script>

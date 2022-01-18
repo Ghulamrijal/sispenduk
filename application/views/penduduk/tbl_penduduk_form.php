@@ -4,7 +4,7 @@
 			<div class="box-header with-border">
 				<h3 class="box-title"><?php echo strtoupper($button) ?> DATA TBL_PENDUDUK</h3>
 			</div>
-			<form action="<?php echo $action; ?>" method="post">
+			<form method="post" action="<?php echo $action; ?>" enctype="multipart/form-data">
 			
 				<table class='table table-bordered'>
 	
@@ -18,6 +18,9 @@
 	
 					<tr>
 						<td width='200'>Nik <?php echo form_error('nik') ?></td><td><input type="text" class="form-control" name="nik" id="nik" placeholder="Nik" value="<?php echo $nik; ?>" /></td>
+					</tr>
+					<tr>
+						<td width='200'>File <?php echo form_error('nik') ?></td><td><input type="file" class="form-control" name="file_KK" id="file_KK" placeholder="" value="<?php echo $file_KK; ?>" /></td>
 					</tr>
 	
 					<tr>

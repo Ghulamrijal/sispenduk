@@ -52,7 +52,7 @@
                 <th>No</th>
 		<th>Nama</th>
 		<th>Alamat</th>
-		<th>Nik</th>
+        <th>Nik</th>
 		<th>Action</th>
             </tr><?php
             foreach ($penduduk_data as $penduduk)
@@ -62,7 +62,7 @@
 			<td width="10px"><?php echo ++$start ?></td>
 			<td><?php echo $penduduk->nama ?></td>
 			<td><?php echo $penduduk->alamat ?></td>
-			<td><?php echo $penduduk->nik ?></td>
+            <td><?php echo $penduduk->nik ?></td>
 			<td style="text-align:center" width="200px">
 				<?php 
 				echo anchor(site_url('penduduk/read/'.$penduduk->id),'<i class="fa fa-eye" aria-hidden="true"></i>','class="btn btn-danger btn-sm"'); 

@@ -24,6 +24,10 @@
 				<td>Nik</td>
 				<td><?php echo $nik; ?></td>
 			</tr>
+			<tr>
+				<td>File</td>
+				<td><a href="<?php echo base_url() ?>upload/<?php echo $file_KK; ?>" target="_blank"><?php echo $file_KK; ?></a></td>
+			</tr>
 	
 			<tr>
 				<td></td>

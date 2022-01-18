@@ -1,6 +1,4 @@
 <div class="content-wrapper">
-    <section class="content">
-        <?php echo alert('alert-info', 'Selamat', 'Data Berhasil Diperbaharui')?>
         <div class="row">
             <div class="col-xs-12">
                 <div class="box box-warning box-solid">

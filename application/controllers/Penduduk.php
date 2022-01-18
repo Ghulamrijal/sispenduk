@@ -53,7 +53,8 @@ class Penduduk extends CI_Controller
 		'id' => $row->id,
 		'nama' => $row->nama,
 		'alamat' => $row->alamat,
-		'nik' => $row->nik,
+        'nik' => $row->nik,
+        'file_KK' => set_value('file_KK', $row->file_KK)
 	    );
             $this->template->load('template','penduduk/tbl_penduduk_read', $data);
         } else {
@@ -64,13 +65,16 @@ class Penduduk extends CI_Controller
 
     public function create() 
     {
+        
         $data = array(
             'button' => 'Create',
             'action' => site_url('penduduk/create_action'),
 	    'id' => set_value('id'),
 	    'nama' => set_value('nama'),
 	    'alamat' => set_value('alamat'),
-	    'nik' => set_value('nik'),
+        'nik' => set_value('nik'),
+        'file_KK' => set_value('file_KK')
+        ,
 	);
         $this->template->load('template','penduduk/tbl_penduduk_form', $data);
     }
@@ -82,10 +86,21 @@ class Penduduk extends CI_Controller
         if ($this->form_validation->run() == FALSE) {
             $this->create();
         } else {
+            // $file = "";
+            $config['upload_path'] = './upload/';
+            $config['allowed_types'] = 'gif|jpg|png|pdf';
+            $config['max_size'] = 5000;
+            $this->upload->initialize($config);
+                    if(!$this->upload->do_upload('file_KK')){
+                        $file = "";
+                    }else{
+                        $file = $this->upload->file_name;
+                    }
             $data = array(
 		'nama' => $this->input->post('nama',TRUE),
 		'alamat' => $this->input->post('alamat',TRUE),
-		'nik' => $this->input->post('nik',TRUE),
+        'nik' => $this->input->post('nik',TRUE),
+        'file_KK' => $file
 	    );
 
             $this->Penduduk_model->insert($data);
@@ -105,7 +120,8 @@ class Penduduk extends CI_Controller
 		'id' => set_value('id', $row->id),
 		'nama' => set_value('nama', $row->nama),
 		'alamat' => set_value('alamat', $row->alamat),
-		'nik' => set_value('nik', $row->nik),
+        'nik' => set_value('nik', $row->nik),
+        'file_KK' => set_value('file_KK', $row->file_KK)
 	    );
             $this->template->load('template','penduduk/tbl_penduduk_form', $data);
         } else {
